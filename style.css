@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:#fef1cb;
+}
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:aqua;
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0 100%);
+}
+.content{
+    position: relative;
+    max-width: 1050px;
+    padding: 25px 20px;
+    margin: 0 20px;
+    background: rgba(255, 255, 255,1);
+    backdrop-filter: blur(5px);
+    border-radius: 30px;
+    box-shadow: 35px 35px 68px 0px rgba(0, 192, 254, .5),
+    35px 35px 68px 0px rgba(0, 0, 0, .2),
+    inset -8px -8px 16px 0px  rgba(0, 192, 254, .6),
+    inset 11px 11px 28px 0px rgba(255, 255, 255,255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .imgbox{
+    position: relative;
+    width: 50%;
+    min-width: 300px;
+}
+.content .imgbox > img{
+    width: 100%;
+}
+
+.content > form{
+    position: relative;
+    width: 40%;
+    height: 100%;
+    margin-right: 30px;
+}
+
+.content form h2{
+    color: aqua;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 8px 10px;
+    font-size: 20px;
+    font-weight: 800;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    box-shadow: 35px 35px 68px 0px rgba(0, 192, 254, .5),
+    35px 35px 68px 0px rgba(0, 0, 0, .2),
+    inset -8px -8px 16px 0px  rgba(0, 192, 254, .6),
+    inset 11px 11px 28px 0px rgba(255, 255, 255,255);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.content form > .inputbox{
+    position: relative;
+    width: 100%;
+    height: 55px;
+    margin: 20px 0;
+}
+.content form  .inputbox input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color:aqua;
+    background-color: aqua;
+    font-size: 16px;
+    padding: 0 16px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid transparent;
+    transition: .8s ease;
+}
+
+.content form  .inputbox input:focus,
+.content form  .inputbox input:valid{
+    background-color: white;
+    border-color: aqua;
+    border-radius: 5px;
+    /* box-shadow: 35px 35px 68px 0px rgba(0, 192, 254, .5),
+    35px 35px 68px 0px rgba(0, 0, 0, .2),
+    inset -8px -8px 16px 0px  rgba(0, 192, 254, .6),
+    inset 11px 11px 28px 0px rgba(255, 255, 255, 255); */
+}
+.content form  .inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    color: white;
+    font-size: 18px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: .5s ease;
+}
+.content form  .inputbox input:focus ~ label,
+.content form  .inputbox input:valid ~ label{
+    padding: 5px;
+    top:0;
+    left: 12px;
+    background-color: rgb(138, 235, 235);
+    font-size: 17px;
+    border-radius: 5px;
+    /* box-shadow: 35px 35px 68px 0px rgba(0, 192, 254, .5),
+    35px 35px 68px 0px rgba(0, 0, 0, .2),
+    inset -8px -8px 16px 0px  rgba(0, 192, 254, .6),
+    inset 11px 11px 28px 0px rgba(255, 255, 255, 255); */
+}
+.content form  .inputbox input[type="submit"]{
+    color: white;
+    background-color: aqua;
+    padding-left: 0;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    transition: all .8s ease, box-shadow .8s ease;
+}
+.content form  .inputbox input[type="submit"]:hover{
+    background-color: white;
+    color: aqua;
+    border: 1px solid aqua ;
+}
+.content form .inputbox input[type="submit"]:active{
+    box-shadow: 5px 5px 8px 0px rgba(0, 192, 254, .5),
+    5px 5px 8px 0px rgba(0, 0, 0, .2),
+    inset -8px -8px 16px 0px  rgba(0, 192, 254, .6),
+    inset 11px 11px 28px 0px rgba(255, 255, 255, 255);
+}
+
+@media (max-width:600px){
+    .content{
+        flex-direction: column;
+    }
+    .content form{
+        width: 100%;
+        margin-left: 30px;
+    }
+}
